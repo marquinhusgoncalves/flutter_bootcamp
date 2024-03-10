@@ -1,4 +1,4 @@
-package co.appbrewery.micard;
+package co.appbrewery.clima;
 
 import io.flutter.embedding.android.FlutterActivity;
 
