@@ -16,8 +16,7 @@ class InputPage extends StatefulWidget {
 }
 
 class _InputPageState extends State<InputPage> {
-  Color maleCardColor = inactiveColor;
-  Color femaleCardColor = inactiveColor;
+  Gender? selectedGender;
 
   @override
   Widget build(BuildContext context) {
@@ -34,10 +33,13 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      updateColor(Gender.male);
+                      setState(() {
+                        selectedGender = Gender.male;
+                      });
+                      // updateColor(Gender.male);
                     },
                     child: ReusableCard(
-                      color: maleCardColor,
+                      color: selectedGender == Gender.male ? activeCardColor : inactiveColor,
                       cardChild: IconContent(icon: FontAwesomeIcons.mars, label: 'MALE'),
                     ),
                   ),
@@ -45,10 +47,13 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: GestureDetector(
                     onTap: () {
-                      updateColor(Gender.female);
+                      setState(() {
+                        selectedGender = Gender.female;
+                      });
+                      // updateColor(Gender.female);
                     },
                     child: ReusableCard(
-                      color: femaleCardColor,
+                      color: selectedGender == Gender.female ? activeCardColor : inactiveColor,
                       cardChild: IconContent(icon: FontAwesomeIcons.venus, label: 'FEMALE'),
                     ),
                   ),
@@ -89,18 +94,5 @@ class _InputPageState extends State<InputPage> {
         height: bottomContainerHeight,
       ),
     );
-  }
-
-  void updateColor(Gender gender) {
-    setState(() {
-      if (gender == Gender.male) {
-        maleCardColor = activeCardColor;
-        femaleCardColor = inactiveColor;
-      }
-      if (gender == Gender.female) {
-        femaleCardColor = activeCardColor;
-        maleCardColor = inactiveColor;
-      }
-    });
   }
 }
