@@ -31,31 +31,21 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: [
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender = Gender.male;
-                      });
-                      // updateColor(Gender.male);
-                    },
-                    child: ReusableCard(
-                      color: selectedGender == Gender.male ? activeCardColor : inactiveColor,
-                      cardChild: IconContent(icon: FontAwesomeIcons.mars, label: 'MALE'),
-                    ),
+                  child: ReusableCard(
+                    color: selectedGender == Gender.male ? activeCardColor : inactiveColor,
+                    cardChild: IconContent(icon: FontAwesomeIcons.mars, label: 'MALE'),
+                    onPress: () => setState(() {
+                      selectedGender = Gender.male;
+                    }),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender = Gender.female;
-                      });
-                      // updateColor(Gender.female);
-                    },
-                    child: ReusableCard(
-                      color: selectedGender == Gender.female ? activeCardColor : inactiveColor,
-                      cardChild: IconContent(icon: FontAwesomeIcons.venus, label: 'FEMALE'),
-                    ),
+                  child: ReusableCard(
+                    color: selectedGender == Gender.female ? activeCardColor : inactiveColor,
+                    cardChild: IconContent(icon: FontAwesomeIcons.venus, label: 'FEMALE'),
+                    onPress: () => setState(() {
+                      selectedGender = Gender.female;
+                    }),
                   ),
                 ),
               ],
@@ -65,6 +55,7 @@ class _InputPageState extends State<InputPage> {
             child: ReusableCard(
               color: activeCardColor,
               cardChild: IconContent(icon: FontAwesomeIcons.mars, label: 'MALE'),
+              onPress: () => {},
             ),
           ),
           Expanded(
@@ -74,12 +65,14 @@ class _InputPageState extends State<InputPage> {
                   child: ReusableCard(
                     color: activeCardColor,
                     cardChild: IconContent(icon: FontAwesomeIcons.mars, label: 'MALE'),
+                    onPress: () => {},
                   ),
                 ),
                 Expanded(
                   child: ReusableCard(
                     color: activeCardColor,
                     cardChild: IconContent(icon: FontAwesomeIcons.mars, label: 'MALE'),
+                    onPress: () => {},
                   ),
                 ),
               ],
