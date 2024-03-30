@@ -1,4 +1,4 @@
-package co.appbrewery.micard;
+package com.marquinhusgoncalves.flash_chat;
 
 import io.flutter.embedding.android.FlutterActivity;
 
