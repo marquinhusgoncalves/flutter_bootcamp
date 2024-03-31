@@ -1,4 +1,4 @@
-package co.appbrewery.micard;
+package co.appbrewery.bmi_calculator;
 
 import io.flutter.embedding.android.FlutterActivity;
 

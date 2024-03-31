@@ -1,4 +1,4 @@
-package co.appbrewery.micard;
+package co.appbrewery.quizzler;
 
 import io.flutter.embedding.android.FlutterActivity;
 
